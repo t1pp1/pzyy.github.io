@@ -20,28 +20,34 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="pzyy&#39;s 动感地带">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="准备函数对象和实例对象 函数对象: 将函数作为对象使用时, 简称为函数对象。括号前面是函数，点前面是函数对象。 实例对象: new 函数产生的对象, 简称为对象  回调函数的分类 同步回调:    理解: 立即执行, 完全执行完了才结束, 不会放入回调队列中    例子: 数组遍历相关的回调函数 &#x2F; Promise的excutor函数  123456&#x2F;&#x2F; 1. 同步回调函数&#x2F;&#x2F; const arr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Promise">
+<meta property="og:url" content="http://example.com/2021/02/15/Promise/index.html">
 <meta property="og:site_name" content="pzyy&#39;s 动感地带">
+<meta property="og:description" content="准备函数对象和实例对象 函数对象: 将函数作为对象使用时, 简称为函数对象。括号前面是函数，点前面是函数对象。 实例对象: new 函数产生的对象, 简称为对象  回调函数的分类 同步回调:    理解: 立即执行, 完全执行完了才结束, 不会放入回调队列中    例子: 数组遍历相关的回调函数 &#x2F; Promise的excutor函数  123456&#x2F;&#x2F; 1. 同步回调函数&#x2F;&#x2F; const arr">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/2908030/1612436099624-36149cba-e128-4923-ac76-a8dd7de9ced6.png#align=left&display=inline&height=440&margin=%5Bobject%20Object%5D&originHeight=440&originWidth=1123&size=0&status=done&style=none&width=1123">
+<meta property="article:published_time" content="2021-02-15T15:06:59.000Z">
+<meta property="article:modified_time" content="2021-02-15T15:08:16.961Z">
 <meta property="article:author" content="pzyy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/png/2908030/1612436099624-36149cba-e128-4923-ac76-a8dd7de9ced6.png#align=left&display=inline&height=440&margin=%5Bobject%20Object%5D&originHeight=440&originWidth=1123&size=0&status=done&style=none&width=1123">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/02/15/Promise/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>pzyy's 动感地带</title>
+  <title>Promise | pzyy's 动感地带</title>
   
 
 
@@ -184,9 +190,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -202,10 +209,9 @@
       <meta itemprop="name" content="pzyy's 动感地带">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/15/Promise/" class="post-title-link" itemprop="url">Promise</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Promise
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -243,7 +249,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="函数对象和实例对象"><a href="#函数对象和实例对象" class="headerlink" title="函数对象和实例对象"></a>函数对象和实例对象</h2><ol>
+        <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="函数对象和实例对象"><a href="#函数对象和实例对象" class="headerlink" title="函数对象和实例对象"></a>函数对象和实例对象</h2><ol>
 <li>函数对象: 将函数作为对象使用时, 简称为函数对象。括号前面是函数，点前面是函数对象。</li>
 <li>实例对象: new 函数产生的对象, 简称为对象</li>
 </ol>
@@ -322,21 +328,23 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;Script start&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123; <span class="comment">// setTimeout的回调函数被添加到宏任务队列</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;setTimeout&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    resolve(<span class="string">&#x27;Promise 1 resolved&#x27;</span>);</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="params">res</span> =&gt;</span> <span class="built_in">console</span>.log(res)); <span class="comment">// 回调函数被添加到微任务队列</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    resolve(<span class="string">&#x27;Promise 2 resolved&#x27;</span>);</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123; <span class="comment">// 回调函数被添加到微任务队列</span></span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            resolve(<span class="string">&#x27;Promise 3 resolved&#x27;</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> <span class="built_in">console</span>.log(res)); <span class="comment">// 回调函数被添加到微任务队列</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;Script End&#x27;</span>);</span><br><span class="line"><span class="comment">// Script start</span></span><br><span class="line"><span class="comment">// Script End</span></span><br><span class="line"><span class="comment">// Promise 1 resolved</span></span><br><span class="line"><span class="comment">// Promise 2 resolved</span></span><br><span class="line"><span class="comment">// Promise 3 resolved</span></span><br><span class="line"><span class="comment">// setTimeout</span></span><br></pre></td></tr></table></figure>
 <p>当事件循环正在执行微任务队列中的任务时，又有另一个 promise 被 resolve 了，它将会被添加到同一个微任务队列的队尾，同样也会被优先执行于消息队列中的回调函数，无论这个回调函数等待了多久。</p>
 <h1 id="手写Promise"><a href="#手写Promise" class="headerlink" title="手写Promise"></a>手写Promise</h1>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+
+
+        
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -389,6 +397,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%AE%9E%E4%BE%8B%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.1.</span> <span class="nav-text">函数对象和实例对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">回调函数的分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS%E4%B8%AD%E7%9A%84Error"><span class="nav-number">2.</span> <span class="nav-text">JS中的Error</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">内部错误类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.2.</span> <span class="nav-text">错误对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-number">2.3.</span> <span class="nav-text">错误处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Promise%E7%9A%84%E7%90%86%E8%A7%A3%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">Promise的理解和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">3.1.</span> <span class="nav-text">Promise是什么?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">3.1.1.</span> <span class="nav-text">理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#promise%E7%9A%84%E7%8A%B6%E6%80%81%E6%94%B9%E5%8F%98"><span class="nav-number">3.1.2.</span> <span class="nav-text">promise的状态改变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#promise-%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="nav-number">3.1.3.</span> <span class="nav-text">promise 的基本流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.2.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#promise-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">3.2.1.</span> <span class="nav-text">promise 的基本使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8Promise"><span class="nav-number">3.3.</span> <span class="nav-text">为什么要用Promise?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Promise"><span class="nav-number">3.4.</span> <span class="nav-text">如何使用Promise?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#API"><span class="nav-number">3.4.1.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#promise%E7%9A%84%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98"><span class="nav-number">3.4.2.</span> <span class="nav-text">promise的几个关键问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AE%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97-%E5%AE%8F%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97"><span class="nav-number">4.</span> <span class="nav-text">微任务队列&#x2F;宏任务队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%8B%E5%86%99Promise"><span class="nav-number">5.</span> <span class="nav-text">手写Promise</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
